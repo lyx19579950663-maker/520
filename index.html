@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>520 - 爱你的每一天</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 背景元素 -->
+    <div class="background">
+        <div class="stars"></div>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 顶部标题 -->
+        <header class="header">
+            <h1 class="title">❤️ 520 ❤️</h1>
+            <p class="subtitle">我爱你，就像520爱每一个相爱的人</p>
+        </header>
+
+        <!-- 倒计时板块 -->
+        <section class="countdown-section">
+            <div class="countdown">
+                <h2>距离下一个520还有</h2>
+                <div class="countdown-display">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">0</span>
+                        <span class="countdown-label">天</span>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">0</span>
+                        <span class="countdown-label">时</span>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">0</span>
+                        <span class="countdown-label">分</span>
+                    </div>
+                    <span class="countdown-separator">:</span>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">0</span>
+                        <span class="countdown-label">秒</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 祝福语板块 -->
+        <section class="wishes-section">
+            <h2>💝 今日祝福 💝</h2>
+            <div class="wishes-box">
+                <p class="wish-text" id="wish-text">点击下方按钮获取祝福语</p>
+                <button class="wish-button" onclick="generateWish()">✨ 获取祝福语 ✨</button>
+            </div>
+        </section>
+
+        <!-- 互动板块 -->
+        <section class="interactive-section">
+            <h2>💑 互动专区 💑</h2>
+            <div class="interactive-buttons">
+                <button class="interactive-btn btn-heart" onclick="openConfession()">
+                    💕 表白区
+                </button>
+                <button class="interactive-btn btn-music" id="musicBtn" onclick="toggleMusic()">
+                    🎵 音乐 (关)
+                </button>
+                <button class="interactive-btn btn-hearts" onclick="triggerHearts()">
+                    🎉 爱心雨
+                </button>
+            </div>
+        </section>
+
+        <!-- 相册板块 -->
+        <section class="gallery-section">
+            <h2>📸 美好回忆 📸</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>💑</span>
+                        <p>我们的故事</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>🌹</span>
+                        <p>浪漫时刻</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>💍</span>
+                        <p>珍贵承诺</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <span>🎁</span>
+                        <p>惊喜礼物</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>用爱装点每一个520 💕 | 2026</p>
+        </footer>
+    </div>
+
+    <!-- 表白弹窗 -->
+    <div class="modal" id="confessionModal">
+        <div class="modal-content confession-modal">
+            <span class="close" onclick="closeConfession()">&times;</span>
+            <h2>💌 表白时刻 💌</h2>
+            <textarea id="confessionText" placeholder="写下你想说的话..."></textarea>
+            <button class="confession-btn" onclick="submitConfession()">💝 发送祝福 💝</button>
+            <div class="confession-response" id="confessionResponse"></div>
+        </div>
+    </div>
+
+    <!-- 音乐播放器 (隐藏) -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
